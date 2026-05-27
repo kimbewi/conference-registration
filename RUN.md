@@ -1,25 +1,44 @@
 # Run the website (one step)
 
-## Easiest — double-click
+Everything is already installed in this folder. You do **not** need Node.js on your Mac.
 
-1. Open Finder → go to `conference-registration`
-2. **Double-click** `Start Website.command`
-3. If macOS asks, click **Open**
-4. Your browser opens **http://localhost:3000**
+## Option A — Desktop shortcut
 
-## Or — one line in Terminal
+Double-click **`Conference Portal`** on your **Desktop**.
+
+## Option B — Double-click in this folder
+
+Double-click **`Start Website.command`** in Finder.
+
+If macOS blocks it: right-click → **Open** → **Open** again.
+
+## Option C — Terminal
 
 ```bash
-cd /Users/shu/conference-registration && chmod +x start.sh && ./start.sh
+/Users/shu/conference-registration/start.sh
 ```
 
-First run downloads Node.js and installs packages automatically (may take 2–5 minutes). Later runs start in seconds.
+---
 
-### Logins
+The first time may take 2–5 minutes (downloads Node + packages). After that it starts in seconds.
+
+Browser opens: **http://localhost:3000**
 
 | Role | Email | Password |
 |------|-------|----------|
 | Admin | admin@conference.local | admin12345 |
 | User | participant@conference.local | user12345 |
 
-Stop the server: press **Ctrl+C** in the Terminal window.
+Press **Ctrl+C** in Terminal to stop.
+
+---
+
+## Push to GitHub (one time)
+
+```bash
+cd /Users/shu/conference-registration
+chmod +x push-to-github.sh
+./push-to-github.sh
+```
+
+Sign in when the browser opens. Your repo will be created as `conference-registration` on your GitHub account.

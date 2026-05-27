@@ -9,9 +9,10 @@ if ! command -v gh &>/dev/null; then
   echo "Installing GitHub CLI..."
   ARCH=$(uname -m)
   [ "$ARCH" = "arm64" ] && GH_ARCH="macOS_arm64" || GH_ARCH="macOS_amd64"
+  GH_VER="2.62.0"
   TMP=$(mktemp -d)
-  curl -fsSL "https://github.com/cli/cli/releases/latest/download/gh_${GH_ARCH}.tar.gz" -o "$TMP/gh.tar.gz"
-  tar -xzf "$TMP/gh.tar.gz" -C "$TMP"
+  curl -fsSL "https://github.com/cli/cli/releases/download/v${GH_VER}/gh_${GH_VER}_${GH_ARCH}.zip" -o "$TMP/gh.zip"
+  unzip -q "$TMP/gh.zip" -d "$TMP"
   GH_BIN=$(find "$TMP" -name gh -type f | head -1)
   mkdir -p "$HOME/.local/bin"
   cp "$GH_BIN" "$HOME/.local/bin/gh"
